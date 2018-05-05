@@ -29,8 +29,7 @@ class CreateExamenesFisicosTable extends Migration
             $table->string('neurologico');
             $table->date('fecha');
 
-            //Llaves Foraneas
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+
 
             $table->timestamps();
 
