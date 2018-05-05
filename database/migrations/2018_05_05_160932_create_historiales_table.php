@@ -23,7 +23,7 @@ class CreateHistorialesTable extends Migration
             $table->integer('cirugia_id')->unsigned();
 
             //Llaves Foraneas
-            $table->foreign('paciente_id')->references('id')->on('Pacientes');
+            $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->foreign('antecedenteHeredoFamiliar_id')->references('id')->on('antecedentesHeredoFamiliares');
             $table->foreign('antecedentePersonalPatologico_id')->references('id')->on('antecedentesPersonalesPatologicos');
             $table->foreign('antecedentePersonalNoPatologico_id')->references('id')->on('antecedentesPersonalesNoPatologicos');
