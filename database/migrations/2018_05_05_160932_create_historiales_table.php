@@ -24,10 +24,10 @@ class CreateHistorialesTable extends Migration
 
             //Llaves Foraneas
             $table->foreign('paciente_id')->references('id')->on('Pacientes');
-            $table->foreign('antecedenteHeredoFamiliar_id')->references('id')->on('antecedentesHeredoFamiliares_id');
-            $table->foreign('antecedentePersonalPatologico_id')->references('id')->on('antecedentesPersonalesPatologicos_id');
-            $table->foreign('antecedentePersonalNoPatologico_id')->references('id')->on('antecedentesPersonalesNoPatologicos_id');
-            $table->foreign('alergiaMedicamentoAlimento_id')->references('id')->on('alergiasMedicamentosAlimentos_id');
+            $table->foreign('antecedenteHeredoFamiliar_id')->references('id')->on('antecedentesHeredoFamiliares');
+            $table->foreign('antecedentePersonalPatologico_id')->references('id')->on('antecedentesPersonalesPatologicos');
+            $table->foreign('antecedentePersonalNoPatologico_id')->references('id')->on('antecedentesPersonalesNoPatologicos');
+            $table->foreign('alergiaMedicamentoAlimento_id')->references('id')->on('alergiasMedicamentosAlimentos');
             $table->foreign('cirugia_id')->references('id')->on('cirugias');
 
             $table->timestamps();
