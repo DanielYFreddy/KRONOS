@@ -23,12 +23,12 @@ class CreateHistorialesTable extends Migration
             $table->integer('cirugia_id')->unsigned();
 
             //Llaves Foraneas
-            $table->foreing('paciente_id')->references('id')->on('Pacientes');
-            $table->foreing('antecedenteHeredoFamiliar_id')->references('id')->on('antecedentesHeredoFamiliares_id')
-            $table->foreing('antecedentePersonalPatologico_id')->references('id')->on('antecedentesPersonalesPatologicos_id')
-            $table->foreing('antecedentePersonalNoPatologico_id')->references('id')->on('antecedentesPersonalesNoPatologicos_id')
-            $table->foreing('alergiaMedicamentoAlimento_id')->references('id')->on('alergiasMedicamentosAlimentos_id')
-            $table->foreing('cirugia_id')->references('id')->on('cirugias')
+            $table->foreign('paciente_id')->references('id')->on('Pacientes');
+            $table->foreign('antecedenteHeredoFamiliar_id')->references('id')->on('antecedentesHeredoFamiliares_id')
+            $table->foreign('antecedentePersonalPatologico_id')->references('id')->on('antecedentesPersonalesPatologicos_id')
+            $table->foreign('antecedentePersonalNoPatologico_id')->references('id')->on('antecedentesPersonalesNoPatologicos_id')
+            $table->foreign('alergiaMedicamentoAlimento_id')->references('id')->on('alergiasMedicamentosAlimentos_id')
+            $table->foreign('cirugia_id')->references('id')->on('cirugias')
 
             $table->timestamps();
         });
