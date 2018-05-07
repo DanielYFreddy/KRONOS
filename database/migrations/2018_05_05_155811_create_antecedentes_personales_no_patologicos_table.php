@@ -15,9 +15,12 @@ class CreateAntecedentesPersonalesNoPatologicosTable extends Migration
     {
         Schema::create('antecedentesPersonalesNoPatologicos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('paciente_id')->unsigned();
             $table->enum('tabaco', ['s', 'n'])->Default('n');
             $table->enum('alcohol', ['s', 'n'])->Default('n');
             $table->enum('drogas', ['s', 'n'])->Default('n');
+
+            $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->timestamps();
         });
     }

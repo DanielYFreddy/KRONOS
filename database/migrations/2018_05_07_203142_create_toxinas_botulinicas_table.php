@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagenesMotivosConsultasTable extends Migration
+class CreateToxinasBotulinicasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,24 @@ class CreateImagenesMotivosConsultasTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagenesMotivosConsultas', function (Blueprint $table) {
+        Schema::create('toxinasBotulinicas', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('motivoConsulta_id')->unsigned();
-            //$table->binary('archivo');
+            $table->date('fechaAplicacion');
+            $table->date('fechaVencimiento');
+            $table->string('numeroLote');
+            $table->string('nombreToxina');
+            $table->string('dilucion');
+            $table->string('totalUnidades');
+            $table->mediumText('observaciones');
 
             //Llaves Foraneas
             $table->foreign('motivoConsulta_id')->references('id')->on('motivosConsultas');
-            
             $table->timestamps();
 
         });
 
-        DB::statement("ALTER TABLE imagenesMotivosConsultas ADD archivo LONGBLOB");
+        DB::statement("ALTER TABLE toxinasBotulinicas ADD archivo LONGBLOB");
     }
 
     /**
@@ -36,6 +40,6 @@ class CreateImagenesMotivosConsultasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imagenesMotivosConsultas');
+        Schema::dropIfExists('toxinasBotulinicas');
     }
 }

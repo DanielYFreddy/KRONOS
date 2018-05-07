@@ -15,6 +15,7 @@ class CreateAntecedentesPersonalesPatologicosTable extends Migration
     {
         Schema::create('antecedentesPersonalesPatologicos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('paciente_id')->unsigned();
             $table->enum('diabetes', ['s', 'n'])->Default('n');
             $table->enum('presionAlta', ['s', 'n'])->Default('n');
             $table->enum('cancer', ['s', 'n'])->Default('n');
@@ -23,6 +24,8 @@ class CreateAntecedentesPersonalesPatologicosTable extends Migration
             $table->enum('asma', ['s', 'n'])->Default('n');
             $table->enum('artritis', ['s', 'n'])->Default('n');
             $table->mediumText('otros');
+
+            $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->timestamps();
         });
     }

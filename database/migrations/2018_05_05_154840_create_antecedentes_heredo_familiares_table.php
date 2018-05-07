@@ -15,6 +15,7 @@ class CreateAntecedentesHeredoFamiliaresTable extends Migration
     {
         Schema::create('antecedentesHeredoFamiliares', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('paciente_id')->unsigned();
             $table->enum('diabetes',['s','n'])->default('n');
             $table->enum('presionAlta',['s','n'])->default('n');
             $table->enum('cancer',['s','n'])->default('n');
@@ -23,6 +24,8 @@ class CreateAntecedentesHeredoFamiliaresTable extends Migration
             $table->enum('asma',['s','n'])->default('n');
             $table->enum('artritis',['s','n'])->default('n');
             $table->mediumText('otros');
+
+            $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->timestamps();
 
         });

@@ -15,8 +15,11 @@ class CreateAlergiasMedicamentosAlimentosTable extends Migration
     {
         Schema::create('alergiasMedicamentosAlimentos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('paciente_id')->unsigned();
             $table->enum('estado',['s','n'])->default('n');
             $table->mediumText('informacion');
+
+            $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->timestamps();
         });
     }
