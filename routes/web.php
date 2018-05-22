@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	dd(App\Paciente::find(1)->alergiaMedicamentoAlimento);
+    //return view('welcome');
 });

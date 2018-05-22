@@ -14,5 +14,18 @@ class Paciente extends Model
         return $this->hasOne('App\AntecedenteHeredoFamiliar');
     }
 
+    public function antecedentePersonalPatologico()
+    {
+        return $this->hasOne('App\AntecedentePersonalPatologico');
+    }
+
+    public function antecedentePersonalNoPatologico()
+    {
+        return $this->hasOne('App\AntecedentePersonalNoPatologico');
+    }
     
+    public function alergiaMedicamentoAlimento()
+    {
+        return $this->hasOne('App\AlergiaMedicamentoAlimento');
+    }
 }
