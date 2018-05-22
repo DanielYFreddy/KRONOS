@@ -12,6 +12,6 @@
 */
 
 Route::get('/', function () {
-	dd(App\Paciente::find(1)->alergiaMedicamentoAlimento);
+	dd(App\ImagenMotivoConsulta::find(1)->motivoConsulta);
     //return view('welcome');
 });

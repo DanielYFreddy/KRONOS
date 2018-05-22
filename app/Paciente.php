@@ -28,4 +28,19 @@ class Paciente extends Model
     {
         return $this->hasOne('App\AlergiaMedicamentoAlimento');
     }
+
+    public function cirugia()
+    {
+        return $this->hasOne('App\Cirugia');
+    }
+
+    public function examenesFisicos()
+    {
+        return $this->hasMany('App\ExamenFisico');
+    }
+
+    public function motivosConsultas()
+    {
+        return $this->hasMany('App\MotivoConsulta');
+    }
 }
