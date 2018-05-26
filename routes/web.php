@@ -12,6 +12,6 @@
 */
 
 Route::get('/', function () {
-	dd(App\DetalleToxinaBotulinica::find(1)->toxinaBotulinica);
+	dd(App\AcidoHialuronico::find(1)->detallesAcidosHialuronicos);
     //return view('welcome');
 });

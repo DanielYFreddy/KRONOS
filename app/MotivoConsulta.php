@@ -28,4 +28,9 @@ class MotivoConsulta extends Model
     {
         return $this->hasMany('App\ToxinaBotulinica', 'motivoConsulta_id');
     }
+
+    public function acidosHialuronicos()
+    {
+        return $this->hasMany('App\AcidoHialuronico', 'motivoConsulta_id');
+    }
 }
