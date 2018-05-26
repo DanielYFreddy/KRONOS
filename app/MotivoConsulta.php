@@ -33,4 +33,24 @@ class MotivoConsulta extends Model
     {
         return $this->hasMany('App\AcidoHialuronico', 'motivoConsulta_id');
     }
+
+    public function laseresCO2()
+    {
+        return $this->hasMany('App\LaserCO2', 'motivoConsulta_id');
+    }
+
+    public function laseres1540()
+    {
+        return $this->hasMany('App\Laser1540', 'motivoConsulta_id');
+    }
+
+    public function cryos()
+    {
+        return $this->hasMany('App\Cryo', 'motivoConsulta_id');
+    }
+
+    public function controlesPesos()
+    {
+        return $this->hasMany('App\ControlPeso', 'motivoConsulta_id');
+    }
 }

@@ -12,6 +12,6 @@
 */
 
 Route::get('/', function () {
-	dd(App\AcidoHialuronico::find(1)->detallesAcidosHialuronicos);
+	dd(App\MotivoConsulta::find(1)->controlesPesos);
     //return view('welcome');
 });
