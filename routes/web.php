@@ -12,6 +12,6 @@
 */
 
 Route::get('/', function () {
-	dd(App\ImagenMotivoConsulta::find(1)->motivoConsulta);
+	dd(App\DetalleToxinaBotulinica::find(1)->toxinaBotulinica);
     //return view('welcome');
 });

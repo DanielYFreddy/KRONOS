@@ -23,4 +23,9 @@ class MotivoConsulta extends Model
     {
         return $this->hasMany('App\ImagenMotivoConsulta', 'motivoConsulta_id');
     }
+
+    public function toxinasBotulinicas()
+    {
+        return $this->hasMany('App\ToxinaBotulinica', 'motivoConsulta_id');
+    }
 }
